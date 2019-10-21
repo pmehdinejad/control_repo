@@ -11,7 +11,4 @@ node 'puppet-server.cloudacropolis.com' {
   ensure => file,
   content => $fqdn $os,
   }
-  class { 'docker': 
-  ensure => absent,
-  }
 }
