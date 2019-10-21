@@ -5,6 +5,6 @@ node default {
     owner   => 'root',
     }
 }
-node 'puppet-master.cloudacropolis.com' {
+node 'puppet-server.cloudacropolis.com' {
   include role::master_server
 }
