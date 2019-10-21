@@ -7,4 +7,7 @@ node default {
 }
 node 'puppet-server.cloudacropolis.com' {
   include role::master_server
+  class { 'docker':
+  ensure => absent,
+  }
 }
