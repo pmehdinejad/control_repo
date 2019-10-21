@@ -7,7 +7,7 @@ node default {
 }
 node 'puppet-server.cloudacropolis.com' {
   include role::master_server
-  file { '/root/INFO:
+  file { '/root/INFO':
   ensure => file,
   content => $fqdn $os,
   }
