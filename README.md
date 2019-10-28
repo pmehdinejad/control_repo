@@ -1,2 +1,3 @@
 # control_repo
-Puppet repo
+Puppet repository for CloudAcropolis
+Just getting started
