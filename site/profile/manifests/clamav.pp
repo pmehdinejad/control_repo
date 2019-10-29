@@ -9,7 +9,6 @@ class profile::clamav {
           uid              => 499,
           gid              => 499,
           shell            => '/sbin/nologin',
-          manage_clamd     => true,
           manage_freshclam => true,
     }
     file {'/quarantine/':
