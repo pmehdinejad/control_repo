@@ -1,6 +1,16 @@
 class profile::clamav {
     class { '::clamav':
         before => File['/quarantine/'],
+          manage_clamd             => true,
+          manage_freshclam         => true,
+          clamd_service_ensure     => 'running',
+          freshclam_service_ensure => 'stopped',
+          manage_user      => true,
+          uid              => 499,
+          gid              => 499,
+          shell            => '/sbin/nologin',
+          manage_clamd     => true,
+          manage_freshclam => true,
     }
     file {'/quarantine/':
         ensure  => directory,
@@ -29,16 +39,4 @@ class profile::clamav {
         hour    => 4,
         minute  => 45,
     }
-}
-class { 'clamav':
-  manage_clamd             => true,
-  manage_freshclam         => true,
-  clamd_service_ensure     => 'running',
-  freshclam_service_ensure => 'stopped',
-  manage_user      => true,
-  uid              => 499,
-  gid              => 499,
-  shell            => '/sbin/nologin',
-  manage_clamd     => true,
-  manage_freshclam => true,
 }
