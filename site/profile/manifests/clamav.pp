@@ -4,8 +4,8 @@ class profile::clamav {
     }
     file {'/quarantine/':
         ensure  => directory,
-        owner   => "clamscan",
-        group   => "clamscan",
+        owner   => "clamav",
+        group   => "clamav",
     }
     Cron { user => root, }
     case $::osfamily {
