@@ -1,14 +1,6 @@
 class profile::clamav {
     class { '::clamav':
         before => File['/quarantine/'],
-          manage_clamd             => true,
-          clamd_service_ensure     => 'running',
-          freshclam_service_ensure => 'stopped',
-          manage_user      => true,
-          uid              => 499,
-          gid              => 499,
-          shell            => '/sbin/nologin',
-          manage_freshclam => true,
     }
     file {'/quarantine/':
         ensure  => directory,
@@ -16,8 +8,7 @@ class profile::clamav {
         group   => "clamscan",
     }
     Cron { user => root, }
-    
-     case $::osfamily {
+    case $::osfamily {
         'redhat': {
            cron {"freshclam":
                command => '/usr/bin/freshclam \
