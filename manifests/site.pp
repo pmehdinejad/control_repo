@@ -11,4 +11,6 @@ node 'puppet-server.cloudacropolis.com' {
   ensure => file,
   content => "Hostname: ${fqdn} and OS: ${os.family}\n",
   }
+node 'puppet-agent.cloudacropolis.com' {
+  include profile::base-ubuntu.pp
 }
