@@ -6,5 +6,5 @@ mod 'puppetlabs/apt'
 mod 'puppet/cron'
 mod 'puppetlabs/cron_core'
 mod 'edestecd/clamav'
-
+mod 'puppet/zabbix'
 
