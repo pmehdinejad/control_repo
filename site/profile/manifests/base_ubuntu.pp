@@ -4,7 +4,7 @@ class profile::base_ubuntu {
   class { 'zabbix::agent':
   zabbix_version => '3.0',
   server => '172.27.3.27',
-  zabbix_package_state => 'installed
+  zabbix_package_state => 'installed'
 }
 
 }
